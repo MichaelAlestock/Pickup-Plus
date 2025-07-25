@@ -2,61 +2,57 @@
 <config>
 
 	<!--  CRATES  -->
-
+	
 	<!--  Wood crate  -->
-	<remove xpath="//block[@name='cntWoodWritableCrate']/drop" />
-	<append xpath="//block[@name='cntWoodWritableCrate']">
+	<remove xpath="//blocks/block[@name='cntWoodWritableCrate']/drop" />
+	<append xpath="//blocks/block[@name='cntWoodWritableCrate']">
 		<drop event="Destroy" name="resourceWood" count="5,8" />
-		<drop event="Harvest" name="cntWoodWritableCrate" count="1" tool_category="harvestingTools" />
 		<drop event="Fall" name="scrapWoodPile" count="1" prob="0.25" stick_chance="1"/>
 	</append>
 
 	<!--  Insecure wood crate  -->
-	<remove xpath="//block[@name='cntWoodWritableCrateInsecure']/drop" />
-	<append xpath="//block[@name='cntWoodWritableCrateInsecure']">
-		<drop event="Destroy" count="0" />
-		<drop event="Harvest" name="resourceWood" count="1,3" tool_category="harvestingTools" />
+	<remove xpath="//blocks/block[@name='cntWoodWritableCrateInsecure']/drop" />
+	<append xpath="//blocks/block[@name='cntWoodWritableCrateInsecure']">
+		<drop event="Destroy" name="cntWoodWritableCrate" count="1" />
+		<drop event="Fall" name="scrapWoodPile" count="1" prob="0.25" stick_chance="1"/>
 	</append>
-	
+
 	<!--  Iron Crates  -->
-	<remove xpath="//block[@name='cntIronWritableCrate']/drop" />
-	<append xpath="//block[@name='cntIronWritableCrate']">
+	<remove xpath="//blocks/block[@name='cntIronWritableCrate']/drop" />
+	<append xpath="//blocks/block[@name='cntIronWritableCrate']">
 		<drop event="Destroy" name="resourceScrapIron" count="3, 5" />
-		<drop event="Harvest" name="cntIronWritableCrate" count="1" tool_category="Disassemble" />
 		<drop event="Fall" name="scrapMetalPile" count="1" prob="0.25" stick_chance="1"/>
 	</append>
 
 	<!--  Insecure iron crate  -->
-	<remove xpath="//block[@name='cntIronWritableCrateInsecure']/drop" />
-	<append xpath="//block[@name='cntIronWritableCrateInsecure']">
-		<drop event="Destroy" count="0" />
+	<remove xpath="//blocks/block[@name='cntIronWritableCrateInsecure']/drop" />
+	<append xpath="//blocks/block[@name='cntIronWritableCrateInsecure']">
+		<drop event="Destroy" name="cntIronWritableCrate" count="1" />
 		<drop event="Fall" name="scrapMetalPile" count="1" prob="0.25" stick_chance="1"/>
 	</append>
 
 	<!--  Steel Crates  -->
-	<remove xpath="//block[@name='cntSteelWritableCrate']/drop" />
-	<append xpath="//block[@name='cntSteelWritableCrate']">
-		<drop event="Destroy" name="resourceForgedSteel" count="2" />
-		<drop event="Harvest" name="cntSteelWritableCrate" count="1" tool_category="Disassemble" />
+	<remove xpath="//blocks/block[@name='cntSteelWritableCrate']/drop" />
+	<append xpath="//blocks/block[@name='cntSteelWritableCrate']">
+		<drop event="Destroy" name="resourceForgedSteel" count="6, 9" />
 		<drop event="Fall" name="scrapMetalPile" count="1" prob="0.25" stick_chance="1"/>
 	</append>
 
 	<!--  Insecure steel crate  -->
-	<remove xpath="//block[@name='cntSteelWritableCrateInsecure']/drop" />
-	<append xpath="//block[@name='cntSteelWritableCrateInsecure']">
-		<drop event="Destroy" count="0" />
+	<remove xpath="//blocks/block[@name='cntSteelWritableCrateInsecure']/drop" />
+	<append xpath="//blocks/block[@name='cntSteelWritableCrateInsecure']">
+		<drop event="Destroy" name="cntSteelWritableCrate" count="1" />
 		<drop event="Fall" name="scrapMetalPile" count="1" prob="0.25" stick_chance="1"/>
 	</append>
-
 
 	<!-- BUILD STATIONS -->
 
 	<!-- CEMENT MIXER -->
 	
-	<remove xpath="//block[@name='cementMixer']/drop"/>
-	<append xpath="//block[@name='cementMixer']">
+	<remove xpath="//blocks/block[@name='cementMixer']/drop"/>
+	<append xpath="//blocks/block[@name='cementMixer']">
 		<drop event="Destroy" name="resourceForgedIron" count="1" prob="0.13" />
-		<drop event="Destroy" name="cementMixer" count="1" tool_category="Disassemble" />
+		<drop event="Destroy" name="cementMixer" count="1"/>
 		<drop event="Fall" name="scrapMetalPile" count="1" prob="0.25" stick_chance="1"/>
 	</append>
 
@@ -64,18 +60,16 @@
 
 	<remove xpath="/blocks/block[@name='forge']/drop"/>
 	<append xpath="/blocks/block[@name='forge']">
-		<drop event="Destroy" name="forge" count="1" tool_category="Disassemble"/>
+		<drop event="Destroy" name="forge" count="1"/>
 		<drop event="Destroy" count="0"/>
-		<drop event="Harvest" name="" count="0" tool_category="Disassemble" />
 		<drop event="Fall" name="scrapMetalPile" count="1" prob="0.25" stick_chance="1"/>
 	</append>
 	
 	<!-- WORKBENCH-->
 
-	<remove xpath="/blocks/block[@name='workbench']/drop"/>
-	<append xpath="/blocks/block[@name='workbench']">
-		<drop event="Destroy" count="0" />
-		<drop event="Harvest" name="workbench" count="1" tool_category="Disassemble" />
+	<remove xpath="//blocks/block[@name='workbench']/drop"/>
+	<append xpath="//blocks/block[@name='workbench']">
+		<drop event="Destroy" name="workbench" count="1" />
 		<drop event="Fall" name="scrapMetalPile" count="1" prob="0.25" stick_chance="1"/>
 	</append>
 
@@ -83,27 +77,25 @@
 
 	<remove xpath="/blocks/block[@name='chemistryStation']/drop"/>
 	<append xpath="/blocks/block[@name='chemistryStation']">
-		<drop event="Destroy" name="resourceForgedIron" count="1" prob="0.13" />
-		<drop event="Harvest" name="chemistryStation" count="1" tool_category="Disassemble" />
+		<drop event="Destroy" name="chemistryStation" count="1"/>
 		<drop event="Fall" name="scrapMetalPile" count="1" prob="0.25" stick_chance="1"/>
 	</append>
 
 	<!--  LADDERS  -->
 
-	<remove xpath="//block[@name='ladderWood']/drop" />
-	<append xpath="//block[@name='ladderWood']">
+	<remove xpath="/blocks/block[@name='ladderWood']/drop" />
+	<append xpath="/blocks/block[@name='ladderWood']">
 		<drop event="Destroy" count="0" />
 		<drop event="Harvest" name="ladderWood" count="1" tool_category="harvestingTools" />
 	</append>
 
-	<remove xpath="//block[@name='ladderMetal']/drop" />
-	<append xpath="//block[@name='ladderMetal']">
+	<append xpath="//blocks/block[@name='ladderMetal']">
 		<drop event="Destroy" count="0" />
 		<drop event="Harvest" name="ladderMetal" count="1" tool_category="Disassemble" />
 	</append>
 
-	<remove xpath="//block[@name='ladderSteel']/drop" />
-	<append xpath="//block[@name='ladderSteel']">
+	<remove xpath="//blocks/block[@name='ladderSteel']/drop" />
+	<append xpath="//blocks/block[@name='ladderSteel']">
 		<drop event="Destroy" count="0" />
 		<drop event="Harvest" name="ladderSteel" count="1" tool_category="Disassemble" />
 	</append>
@@ -112,37 +104,37 @@
 	
 	<!-- WOOD SPIKE TRAPS -->
 
-	<append xpath="//block[@name='trapSpikesWoodMaster']">
+	<append xpath="//blocks/block[@name='trapSpikesWoodMaster']">
 		<property name="CanPickup" value="true"/>
 	</append>
 
-	<append xpath="//block[@name='trapSpikesWoodDmg0']">
+	<append xpath="//blocks/block[@name='trapSpikesWoodDmg0']">
 		<property name="CanPickup" value="true"/>
 	</append>
 
-	<append xpath="//block[@name='trapSpikesWoodDmg1']">
+	<append xpath="//blocks/block[@name='trapSpikesWoodDmg1']">
 		<property name="CanPickup" value="true"/>
 	</append>
 
-	<append xpath="//block[@name='trapSpikesWoodDmg2']">
+	<append xpath="//blocks/block[@name='trapSpikesWoodDmg2']">
 		<property name="CanPickup" value="true"/>
 	</append>
 
 	<!-- IRON SPIKE TRAPS -->
 
-	<append xpath="//block[@name='trapSpikesScrapIronMaster']">
+	<append xpath="//blocks/block[@name='trapSpikesScrapIronMaster']">
 		<property name="CanPickup" value="true"/>
 	</append>
 
-	<append xpath="//block[@name='trapSpikesIronDmg0']">
+	<append xpath="//blocks/block[@name='trapSpikesIronDmg0']">
 		<property name="CanPickup" value="true"/>
 	</append>
 
-	<append xpath="//block[@name='trapSpikesIronDmg1']">
+	<append xpath="//blocks/block[@name='trapSpikesIronDmg1']">
 		<property name="CanPickup" value="true"/>
 	</append>
 
-	<append xpath="//block[@name='trapSpikesIronDmg2']">
+	<append xpath="//blocks/block[@name='trapSpikesIronDmg2']">
 		<property name="CanPickup" value="true"/>
 	</append>
 
@@ -156,20 +148,26 @@
 
 	<!-- MINES -->
 
-	<append xpath="//block[@name='mineCandyTin']">
+	<append xpath="//blocks/block[@name='mineCandyTin']">
 		<property name="CanPickup" value="true"/>
 	</append>
 
-	<append xpath="//block[@name='mineCookingPot']">
+	<append xpath="//blocks/block[@name='mineCookingPot']">
 		<property name="CanPickup" value="true"/>
 	</append>
 
-	<append xpath="//block[@name='mineHubcap']">
+	<append xpath="//blocks/block[@name='mineHubcap']">
 		<property name="CanPickup" value="true"/>
 	</append>
 
-	<append xpath="//block[@name='mineAirFilter']">
+	<append xpath="//blocks/block[@name='mineAirFilter']">
 		<property name="CanPickup" value="true"/>
 	</append>
 	
+	<!-- PLANTS -->
+
+	<append xpath="//blocks/block[@name='treeGrassMaster']">
+		<property name="CanPickup" value="true"/>
+	</append>
+
 </config>
